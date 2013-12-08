@@ -1,8 +1,12 @@
 package cz.pecrom.controller.main;
 
 import cz.pecrom.controller.*;
+import cz.pecrom.ui.menu.*;
+import cz.pecrom.view.main.*;
 
 import javax.swing.*;
+import javax.xml.bind.*;
+import java.io.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -11,20 +15,56 @@ import javax.swing.*;
  * Time: 14:56
  */
 public class DesktopController extends AbstractController {
+  protected final static String MENU_DEFINITION = "desktopMenu.xml";
+  protected JFrame mainFrame = null;
   public DesktopController(String clazz) throws ClassNotFoundException {
-    super(clazz);
+    super(clazz, null, "/cz/pecrom/controller/main/desktopMenu.xml");
+    setMainController(this);
   }
+
+  public void createInternalFrame(AbstractController controller){
+    ((Desktop_Form)getView()).addInternalFrame(controller.getView());
+    getLogger().info("instatiating new internal frame");
+  }
+
+  protected JFrame getMainFrame() {
+    return mainFrame;
+  }
+
+  protected void createMenu(InputStream resource) {
+    try {
+      JAXBContext context = JAXBContext.newInstance(Menu.class);
+      Unmarshaller unmarshaller = context.createUnmarshaller();
+      Menu menu = (Menu) unmarshaller.unmarshal(resource);
+      menuBar = new JMenuBar();
+
+      for (MenuItem item : menu.getMenuItem()) {
+        JMenu mainMenuItem = createMainMenu(menuBar, item.getLabel());
+        createMenuItems(mainMenuItem, item.getChildren());
+        createAppMenuItems(mainMenuItem, item.getApplication());
+      }
+      getMainFrame().setJMenuBar(menuBar);
+    } catch (JAXBException e) {
+      getLogger().info("Cannot parse class");
+    }
+  }
+
 
   @Override
   protected Void doInBackground() throws Exception {
     view = (JComponent) getViewClazz().newInstance();
     view.setVisible(true);
     view.requestFocus();
-    JFrame frame = new JFrame();
-    frame.add(view);
-    frame.setVisible(true);
-    frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-    frame.setSize(1280,760);
+    mainFrame = new JFrame();
+
+    mainFrame.add(view);
+
+    try(InputStream is =getClass().getResourceAsStream(MENU_DEFINITION)){
+      createMenu(is);
+    }
+    mainFrame.setVisible(true);
+    mainFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+    mainFrame.setSize(1280,760);
     return null;
   }
 }
