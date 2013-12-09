@@ -37,45 +37,26 @@ public class Desktop_Form extends javax.swing.JPanel {
   }
 
   @SuppressWarnings("unchecked")
-  // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-  private void initComponents() {
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
 
-    desktopPane = new javax.swing.JDesktopPane();
-    jInternalFrame1 = new javax.swing.JInternalFrame();
+        desktopPane = new javax.swing.JDesktopPane();
 
-    desktopPane.setName("desktopPane"); // NOI18N
+        desktopPane.setName("desktopPane"); // NOI18N
 
-    jInternalFrame1.setName("jInternalFrame1"); // NOI18N
-    jInternalFrame1.setVisible(true);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
+        );
+    }// </editor-fold>//GEN-END:initComponents
 
-    javax.swing.GroupLayout jInternalFrame1Layout = new javax.swing.GroupLayout(jInternalFrame1.getContentPane());
-    jInternalFrame1.getContentPane().setLayout(jInternalFrame1Layout);
-    jInternalFrame1Layout.setHorizontalGroup(
-      jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addGap(0, 11, Short.MAX_VALUE)
-    );
-    jInternalFrame1Layout.setVerticalGroup(
-      jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addGap(0, 0, Short.MAX_VALUE)
-    );
-
-    jInternalFrame1.setBounds(60, 50, 23, 31);
-    desktopPane.add(jInternalFrame1, javax.swing.JLayeredPane.DEFAULT_LAYER);
-
-    javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-    this.setLayout(layout);
-    layout.setHorizontalGroup(
-      layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
-    );
-    layout.setVerticalGroup(
-      layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
-    );
-  }// </editor-fold>//GEN-END:initComponents
-
-  // Variables declaration - do not modify//GEN-BEGIN:variables
-  private javax.swing.JDesktopPane desktopPane;
-  private javax.swing.JInternalFrame jInternalFrame1;
-  // End of variables declaration//GEN-END:variables
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JDesktopPane desktopPane;
+    // End of variables declaration//GEN-END:variables
 }

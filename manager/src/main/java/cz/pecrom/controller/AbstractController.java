@@ -20,7 +20,6 @@ import java.util.logging.*;
 public abstract class AbstractController extends SwingWorker<Void, Void> {
   protected Class viewClazz;
   protected JComponent view;
-  protected String resourcePath = null;
   protected JMenuBar menuBar = null;
   protected static Logger logger = null;
   protected DesktopController mainController = null;
@@ -31,12 +30,6 @@ public abstract class AbstractController extends SwingWorker<Void, Void> {
     this.execute();
   }
 
-  public AbstractController(String viewClazz, DesktopController mainController, String resourcePath) throws ClassNotFoundException {
-    setViewClazz(Class.forName(viewClazz));
-    setMainController(mainController);
-    setResourcePath(resourcePath);
-    this.execute();
-  }
 
   public DesktopController getMainController() {
     return mainController;
@@ -81,8 +74,8 @@ public abstract class AbstractController extends SwingWorker<Void, Void> {
         createMenuItems(mainMenuItem, item.getChildren());
         createAppMenuItems(mainMenuItem, item.getApplication());
       }
+      SwingUtilities.getRootPane(getView()).setJMenuBar(menuBar);
 
-      ((JInternalFrame) getView()).setJMenuBar(menuBar);
     } catch (JAXBException e) {
       getLogger().info("Cannot parse class");
     }
@@ -94,13 +87,6 @@ public abstract class AbstractController extends SwingWorker<Void, Void> {
     return menu;
   }
 
-  public String getResourcePath() {
-    return resourcePath;
-  }
-
-  public void setResourcePath(String resourcePath) {
-    this.resourcePath = resourcePath;
-  }
 
   protected void createAppMenuItems(JMenu parent, List<ApplicationItem> applicationItems) {
     if (!applicationItems.isEmpty())
@@ -111,16 +97,12 @@ public abstract class AbstractController extends SwingWorker<Void, Void> {
           public void actionPerformed(ActionEvent e) {
             try {
               Class clazzController = Class.forName(app.getController());
-              InternalController controller = (InternalController) clazzController.getDeclaredConstructor(String.class,DesktopController.class).newInstance(app.getView(), getMainController());
+              InternalController controller = (InternalController) clazzController.getDeclaredConstructor(String.class, DesktopController.class).newInstance(app.getView(), getMainController());
               controller.execute();
             } catch (ClassNotFoundException e1) {
               getLogger().info("Cannot instatiate new internal frame");
-            } catch (InstantiationException | IllegalAccessException e1) {
+            } catch (InstantiationException | IllegalAccessException | NoSuchMethodException | InvocationTargetException e1) {
               getLogger().info("Cannot instatiate new controller");
-            } catch (NoSuchMethodException e1) {
-              e1.printStackTrace();
-            } catch (InvocationTargetException e1) {
-              e1.printStackTrace();
             }
           }
         });
@@ -143,12 +125,6 @@ public abstract class AbstractController extends SwingWorker<Void, Void> {
   @Override
   protected Void doInBackground() throws Exception {
     view = (JComponent) getViewClazz().newInstance();
-    if (getResourcePath() != null) {
-      try (InputStream resourceStream = getClass().getResourceAsStream(getResourcePath())) {
-        createMenu(resourceStream);
-      }
-    }
-
     view.setVisible(true);
     view.requestFocus();
     return null;

@@ -15,10 +15,9 @@ import java.io.*;
  * Time: 14:56
  */
 public class DesktopController extends AbstractController {
-  protected final static String MENU_DEFINITION = "desktopMenu.xml";
   protected JFrame mainFrame = null;
   public DesktopController(String clazz) throws ClassNotFoundException {
-    super(clazz, null, "/cz/pecrom/controller/main/desktopMenu.xml");
+    super(clazz, null);
     setMainController(this);
   }
 
@@ -58,8 +57,8 @@ public class DesktopController extends AbstractController {
     mainFrame = new JFrame();
 
     mainFrame.add(view);
-
-    try(InputStream is =getClass().getResourceAsStream(MENU_DEFINITION)){
+    System.out.println(getClass().getSimpleName()+".xml");
+    try(InputStream is =getClass().getResourceAsStream(getClass().getSimpleName()+".xml")){
       createMenu(is);
     }
     mainFrame.setVisible(true);

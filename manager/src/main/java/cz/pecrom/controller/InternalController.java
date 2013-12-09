@@ -2,6 +2,8 @@ package cz.pecrom.controller;
 
 import cz.pecrom.controller.main.*;
 
+import java.io.*;
+
 /**
  * Created by IntelliJ IDEA.
  * User: pecrom
@@ -28,7 +30,17 @@ public class InternalController extends AbstractController {
   protected Void doInBackground() throws Exception {
     super.doInBackground();
     getMainController().createInternalFrame(this);
-
     return null;
+  }
+
+  @Override
+  protected void done() {
+    super.done();
+    try (InputStream resourceStream = getClass().getResourceAsStream(getClass().getSimpleName()+".xml")) {
+      if(resourceStream!=null)
+        createMenu(resourceStream);
+    } catch (IOException e) {
+      getLogger().info("missing file");
+    }
   }
 }
