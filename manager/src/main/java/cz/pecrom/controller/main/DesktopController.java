@@ -6,6 +6,7 @@ import cz.pecrom.view.main.*;
 
 import javax.swing.*;
 import javax.xml.bind.*;
+import java.beans.*;
 import java.io.*;
 
 /**
@@ -70,5 +71,10 @@ public class DesktopController extends AbstractController {
     mainFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     mainFrame.setSize(1280,760);
     return null;
+  }
+
+  @Override
+  public void propertyChange(PropertyChangeEvent evt) {
+
   }
 }

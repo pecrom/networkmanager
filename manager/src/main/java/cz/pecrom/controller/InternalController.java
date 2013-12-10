@@ -3,6 +3,7 @@ package cz.pecrom.controller;
 import cz.pecrom.controller.main.*;
 import cz.pecrom.model.*;
 
+import java.beans.*;
 import java.io.*;
 
 /**
@@ -48,5 +49,10 @@ public class InternalController extends AbstractController {
     } catch (IOException e) {
       getLogger().info("missing file");
     }
+  }
+
+  @Override
+  public void propertyChange(PropertyChangeEvent evt) {
+
   }
 }

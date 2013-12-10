@@ -4,12 +4,14 @@
  */
 package cz.pecrom.view.main;
 
+import java.beans.*;
+
 /**
  *
  * @author pecrom
  */
 public class About_Form extends javax.swing.JPanel {
-
+  private final PropertyChangeSupport pcs = new PropertyChangeSupport(this);
     /**
      * Creates new form About_Form
      */
@@ -39,4 +41,12 @@ public class About_Form extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables
+
+  public void addPropertyChangeListener(PropertyChangeListener listener){
+    pcs.addPropertyChangeListener(listener);
+  }
+
+  public void removePropertyChangeListener(PropertyChangeListener listener){
+    pcs.removePropertyChangeListener(listener);
+  }
 }

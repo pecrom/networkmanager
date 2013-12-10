@@ -2,11 +2,13 @@ package cz.pecrom.controller;
 
 import cz.pecrom.controller.main.*;
 import cz.pecrom.model.*;
+import cz.pecrom.ui.*;
 import cz.pecrom.ui.menu.*;
 
 import javax.swing.*;
 import javax.xml.bind.*;
 import java.awt.event.*;
+import java.beans.*;
 import java.io.*;
 import java.lang.reflect.*;
 import java.util.*;
@@ -18,7 +20,7 @@ import java.util.logging.*;
  * Date: 8.12.13
  * Time: 14:48
  */
-public abstract class AbstractController extends SwingWorker<Void, Void> {
+public abstract class AbstractController extends SwingWorker<Void, Void> implements PropertyChangeListener {
   protected Class viewClazz;
   protected JComponent view;
   protected JMenuBar menuBar = null;
@@ -139,10 +141,17 @@ public abstract class AbstractController extends SwingWorker<Void, Void> {
 
   @Override
   protected Void doInBackground() throws Exception {
-    view = (JComponent) getViewClazz().newInstance();
+
+    view = (JComponent) getViewClazz().getDeclaredConstructor().newInstance();
+    getLogger().info("creating view");
     view.setVisible(true);
+
     view.requestFocus();
+
+    ((ViewChangeListener)view).addViewChangeListener(this);
+
     initModel();
+
     return null;
   }
 }

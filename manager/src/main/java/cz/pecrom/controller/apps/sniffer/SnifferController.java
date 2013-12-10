@@ -30,12 +30,12 @@ public class SnifferController extends InternalController {
     return devs;
   }
 
-  private PcapSockAddr getIPv4Addr(List<PcapAddr> addresses) {
+  private PcapAddr findIPv4Addr(List<PcapAddr> addresses){
     if (!addresses.isEmpty()) {
       int i = 0;
       while (i < addresses.size()) {
         if (addresses.get(i).getAddr().getFamily() == PcapSockAddr.AF_INET)
-          return addresses.get(i).getAddr();
+          return addresses.get(i);
         else
           i++;
       }
@@ -43,8 +43,31 @@ public class SnifferController extends InternalController {
     return null;
   }
 
+  private PcapSockAddr getIPv4Addr(List<PcapAddr> addresses) {
+    PcapAddr address = findIPv4Addr(addresses);
+    return address != null ? address.getAddr() : null;
+  }
+
+
+
+  private String getDevicesNetmask(PcapIf inf){
+    if(inf!=null){
+      PcapAddr ipv4addr = findIPv4Addr(inf.getAddresses());
+//      ipv4addr.
+      return ipv4addr != null ? ipv4addr.getNetmask().toString(): null;
+    }
+    return null;
+  }
+
+
+
   private String getDevicesIPv4Address(PcapIf inf) {
-    return getIPv4Addr(inf.getAddresses()).toString();
+    if(inf!=null){
+      PcapSockAddr ipv4addr = getIPv4Addr(inf.getAddresses());
+//      ipv4addr.
+      return ipv4addr != null ? ipv4addr.toString(): null;
+    }
+    return null;
   }
 
   @Override
@@ -53,7 +76,7 @@ public class SnifferController extends InternalController {
     try {
       List<PcapIf> infs = initAllDevs();
       if (!infs.isEmpty()) {
-        for (PcapIf inf : initAllDevs())
+        for (PcapIf inf : infs)
           ((SnifferModel) getModel()).addAdapter(inf);
         ((SnifferModel) getModel()).setAddress(getDevicesIPv4Address(infs.get(0)));
       }
@@ -63,5 +86,16 @@ public class SnifferController extends InternalController {
       getLogger().info("cannot init model: " + e.getMessage());
     }
 
+  }
+
+  @Override
+  public void propertyChange(PropertyChangeEvent evt) {
+    switch(evt.getPropertyName()){
+      case SnifferModel.SELECTED_ADAPTER:
+        ((SnifferModel)getModel()).setSelectedAdapter((PcapIf)evt.getNewValue());
+        ((SnifferModel)getModel()).setAddress(getDevicesIPv4Address((PcapIf)evt.getNewValue()));
+        ((SnifferModel)getModel()).setNetmask(getDevicesNetmask((PcapIf)evt.getNewValue()));
+        break;
+    }
   }
 }

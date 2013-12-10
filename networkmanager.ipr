@@ -27,6 +27,9 @@
         <module name="manager" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="manager" target="1.7" />
+    </bytecodeTargetLevel>
   </component>
   <component name="CopyrightManager" default="">
     <module2copyright />
@@ -217,6 +220,17 @@
       </CLASSES>
       <JAVADOC />
       <SOURCES />
+    </library>
+    <library name="Maven: jnetpcap:jnetpcap:1.4.r1425-1a">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/jnetpcap/jnetpcap/1.4.r1425-1a/jnetpcap-1.4.r1425-1a.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/jnetpcap/jnetpcap/1.4.r1425-1a/jnetpcap-1.4.r1425-1a-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/jnetpcap/jnetpcap/1.4.r1425-1a/jnetpcap-1.4.r1425-1a-sources.jar!/" />
+      </SOURCES>
     </library>
   </component>
 </project>

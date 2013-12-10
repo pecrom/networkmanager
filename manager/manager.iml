@@ -12,6 +12,7 @@
     <orderEntry type="jdk" jdkName="1.7" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="jnetpcap" level="project" />
+    <orderEntry type="library" name="Maven: jnetpcap:jnetpcap:1.4.r1425-1a" level="project" />
   </component>
 </module>
 
