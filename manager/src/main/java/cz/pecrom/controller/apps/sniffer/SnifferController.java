@@ -4,6 +4,7 @@ import cz.pecrom.controller.*;
 import cz.pecrom.controller.main.*;
 import cz.pecrom.model.*;
 import cz.pecrom.model.apps.sniffer.*;
+import cz.pecrom.network.*;
 import cz.pecrom.network.providers.*;
 import org.jnetpcap.*;
 
@@ -78,7 +79,8 @@ public class SnifferController extends InternalController {
       if (!infs.isEmpty()) {
         for (PcapIf inf : infs)
           ((SnifferModel) getModel()).addAdapter(inf);
-        ((SnifferModel) getModel()).setAddress(getDevicesIPv4Address(infs.get(0)));
+        ((SnifferModel)getModel()).setAddress(NetworkUtils.parseIPv4(getDevicesIPv4Address(infs.get(0))));
+        ((SnifferModel)getModel()).setNetmask(NetworkUtils.parseIPv4(getDevicesNetmask(infs.get(0))));
       }
 
 
@@ -93,8 +95,8 @@ public class SnifferController extends InternalController {
     switch(evt.getPropertyName()){
       case SnifferModel.SELECTED_ADAPTER:
         ((SnifferModel)getModel()).setSelectedAdapter((PcapIf)evt.getNewValue());
-        ((SnifferModel)getModel()).setAddress(getDevicesIPv4Address((PcapIf)evt.getNewValue()));
-        ((SnifferModel)getModel()).setNetmask(getDevicesNetmask((PcapIf)evt.getNewValue()));
+        ((SnifferModel)getModel()).setAddress(NetworkUtils.parseIPv4(getDevicesIPv4Address((PcapIf)evt.getNewValue())));
+        ((SnifferModel)getModel()).setNetmask(NetworkUtils.parseIPv4(getDevicesNetmask((PcapIf) evt.getNewValue())));
         break;
     }
   }

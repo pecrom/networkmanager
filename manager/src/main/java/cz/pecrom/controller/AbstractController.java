@@ -28,10 +28,12 @@ public abstract class AbstractController extends SwingWorker<Void, Void> impleme
   protected DesktopController mainController = null;
   protected AbstractModel model;
 
+
   public AbstractController(String viewClazz, AbstractModel model, DesktopController mainController) throws ClassNotFoundException {
     setViewClazz(Class.forName(viewClazz));
     setMainController(mainController);
     setModel(model);
+
     this.execute();
   }
 
@@ -75,6 +77,8 @@ public abstract class AbstractController extends SwingWorker<Void, Void> impleme
       logger = Logger.getLogger("NetworkManager");
     return logger;
   }
+
+
 
   protected void createMenu(InputStream resource) {
     try {
@@ -141,7 +145,6 @@ public abstract class AbstractController extends SwingWorker<Void, Void> impleme
 
   @Override
   protected Void doInBackground() throws Exception {
-
     view = (JComponent) getViewClazz().getDeclaredConstructor().newInstance();
     getLogger().info("creating view");
     view.setVisible(true);

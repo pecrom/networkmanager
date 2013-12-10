@@ -1,29 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="20aff7cb-40fc-464e-b420-da1506646856" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager/src/main/java/cz/pecrom/ui/ViewChangeListener.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manager/src/main/java/cz/pecrom/view/main/About_Form.java" afterPath="$PROJECT_DIR$/manager/src/main/java/cz/pecrom/view/main/About_Form.java" />
+    <list default="true" id="20aff7cb-40fc-464e-b420-da1506646856" name="Default" comment="propertyChangeListeners support">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager/src/main/java/cz/pecrom/view/AbstractView.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manager/src/main/java/cz/pecrom/network/NetworkUtils.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manager/src/main/java/cz/pecrom/controller/AbstractController.java" afterPath="$PROJECT_DIR$/manager/src/main/java/cz/pecrom/controller/AbstractController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manager/src/main/java/cz/pecrom/controller/main/DesktopController.java" afterPath="$PROJECT_DIR$/manager/src/main/java/cz/pecrom/controller/main/DesktopController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manager/src/main/java/cz/pecrom/controller/InternalController.java" afterPath="$PROJECT_DIR$/manager/src/main/java/cz/pecrom/controller/InternalController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manager/src/main/java/cz/pecrom/controller/apps/sniffer/SnifferController.java" afterPath="$PROJECT_DIR$/manager/src/main/java/cz/pecrom/controller/apps/sniffer/SnifferController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manager/src/main/java/cz/pecrom/view/apps/sniffer/Sniffer_Form.form" afterPath="$PROJECT_DIR$/manager/src/main/java/cz/pecrom/view/apps/sniffer/Sniffer_Form.form" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manager/src/main/java/cz/pecrom/view/apps/sniffer/Sniffer_Form.java" afterPath="$PROJECT_DIR$/manager/src/main/java/cz/pecrom/view/apps/sniffer/Sniffer_Form.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manager/manager.iml" afterPath="$PROJECT_DIR$/manager/manager.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/networkmanager.ipr" afterPath="$PROJECT_DIR$/networkmanager.ipr" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/networkmanager.iws" afterPath="$PROJECT_DIR$/networkmanager.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manager/pom.xml" afterPath="$PROJECT_DIR$/manager/pom.xml" />
     </list>
     <ignored path="networkmanager.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="20aff7cb-40fc-464e-b420-da1506646856" time="1386670391838" ignored="false" />
+    <file path="/Dummy.txt" changelist="20aff7cb-40fc-464e-b420-da1506646856" time="1386684816961" ignored="false" />
     <file path="/Launcher.java" changelist="20aff7cb-40fc-464e-b420-da1506646856" time="1386511572414" ignored="false" />
     <file path="/fragment.java" changelist="20aff7cb-40fc-464e-b420-da1506646856" time="1386673950111" ignored="false" />
-    <file path="/AbstractController.java" changelist="20aff7cb-40fc-464e-b420-da1506646856" time="1386674920162" ignored="false" />
+    <file path="/AbstractController.java" changelist="20aff7cb-40fc-464e-b420-da1506646856" time="1386685201924" ignored="false" />
     <file path="/DesktopController.java" changelist="20aff7cb-40fc-464e-b420-da1506646856" time="1386661704143" ignored="false" />
     <file path="/menu.xsd" changelist="20aff7cb-40fc-464e-b420-da1506646856" time="1386661738022" ignored="false" />
-    <file path="/SnifferController.java" changelist="20aff7cb-40fc-464e-b420-da1506646856" time="1386679920299" ignored="false" />
+    <file path="/SnifferController.java" changelist="20aff7cb-40fc-464e-b420-da1506646856" time="1386683812211" ignored="false" />
     <file path="/InternalController.java" changelist="20aff7cb-40fc-464e-b420-da1506646856" time="1386665954258" ignored="false" />
     <file path="/desktopMenu.xml" changelist="20aff7cb-40fc-464e-b420-da1506646856" time="1386530124293" ignored="false" />
     <file path="/AboutController.java" changelist="20aff7cb-40fc-464e-b420-da1506646856" time="1386666045277" ignored="false" />
@@ -32,7 +28,7 @@
     <file path="/PcapProvider.java" changelist="20aff7cb-40fc-464e-b420-da1506646856" time="1386666576055" ignored="false" />
     <file path="/Sniffer_Form.java" changelist="20aff7cb-40fc-464e-b420-da1506646856" time="1386680051890" ignored="false" />
     <file path="/AbstractModel.java" changelist="20aff7cb-40fc-464e-b420-da1506646856" time="1386626083282" ignored="false" />
-    <file path="/SnifferModel.java" changelist="20aff7cb-40fc-464e-b420-da1506646856" time="1386677132691" ignored="false" />
+    <file path="/SnifferModel.java" changelist="20aff7cb-40fc-464e-b420-da1506646856" time="1386683961117" ignored="false" />
     <file path="/AboutController.xml" changelist="20aff7cb-40fc-464e-b420-da1506646856" time="1386662795375" ignored="false" />
     <file path="/DesktopController.xml" changelist="20aff7cb-40fc-464e-b420-da1506646856" time="1386662864095" ignored="false" />
     <file path="$PROJECT_DIR$/../../CARIS/module/vozidla/vozidla-base/src/main/java/cz/teas/caris/module/vozidla/dto/VozidlaView.java" changelist="20aff7cb-40fc-464e-b420-da1506646856" time="1386664148584" ignored="false" />
@@ -42,6 +38,8 @@
     <file path="$MAVEN_REPOSITORY$/cz/teas/caris/module/caris-zakazky-client/1.0-SNAPSHOT/caris-zakazky-client-1.0-SNAPSHOT-sources.jar!/cz/teas/caris/module/zakazky/view/ZakazkaTabMasterDetailView.java" changelist="20aff7cb-40fc-464e-b420-da1506646856" time="1386672375810" ignored="false" />
     <file path="$MAVEN_REPOSITORY$/cz/teas/caris/module/caris-zakazky-client/1.0-SNAPSHOT/caris-zakazky-client-1.0-SNAPSHOT-sources.jar!/cz/teas/caris/module/zakazky/dialog/OdeslatSmsD.java" changelist="20aff7cb-40fc-464e-b420-da1506646856" time="1386672375810" ignored="false" />
     <file path="/ViewChangeListener.java" changelist="20aff7cb-40fc-464e-b420-da1506646856" time="1386674869694" ignored="false" />
+    <file path="/NetworkUtils.java" changelist="20aff7cb-40fc-464e-b420-da1506646856" time="1386683718936" ignored="false" />
+    <file path="/AbstractView.java" changelist="20aff7cb-40fc-464e-b420-da1506646856" time="1386685770958" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +107,7 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/manager/src/main/java/cz/pecrom/controller/AbstractController.java" line="90" class="cz.pecrom.controller.AbstractController" package="cz.pecrom.controller">
+      <breakpoint url="file://$PROJECT_DIR$/manager/src/main/java/cz/pecrom/controller/AbstractController.java" line="94" class="cz.pecrom.controller.AbstractController" package="cz.pecrom.controller">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -139,7 +137,7 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/manager/src/main/java/cz/pecrom/controller/apps/sniffer/SnifferController.java" line="95" class="cz.pecrom.controller.apps.sniffer.SnifferController" package="cz.pecrom.controller.apps.sniffer">
+      <breakpoint url="file://$PROJECT_DIR$/manager/src/main/java/cz/pecrom/controller/apps/sniffer/SnifferController.java" line="97" class="cz.pecrom.controller.apps.sniffer.SnifferController" package="cz.pecrom.controller.apps.sniffer">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -167,7 +165,7 @@
       <file leaf-file-name="SnifferController.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/manager/src/main/java/cz/pecrom/controller/apps/sniffer/SnifferController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="96" column="63" selection-start="2608" selection-end="2608" vertical-scroll-proportion="0.0">
+            <state line="82" column="97" selection-start="2255" selection-end="2255" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -175,19 +173,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="InternalController.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/manager/src/main/java/cz/pecrom/controller/InternalController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="54" column="55" selection-start="1250" selection-end="1250" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="SnifferModel.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/manager/src/main/java/cz/pecrom/model/apps/sniffer/SnifferModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="0" selection-start="545" selection-end="545" vertical-scroll-proportion="0.0">
+            <state line="22" column="29" selection-start="612" selection-end="612" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -198,10 +187,19 @@
       <file leaf-file-name="PcapProvider.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/manager/src/main/java/cz/pecrom/network/providers/PcapProvider.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="16" selection-start="389" selection-end="389" vertical-scroll-proportion="0.0">
+            <state line="21" column="4" selection-start="532" selection-end="532" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NetworkUtils.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/manager/src/main/java/cz/pecrom/network/NetworkUtils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="5" selection-start="434" selection-end="434" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -224,12 +222,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Sniffer_Form.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Sniffer_Form.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/manager/src/main/java/cz/pecrom/view/apps/sniffer/Sniffer_Form.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="168" column="14" selection-start="6867" selection-end="6867" vertical-scroll-proportion="0.69044006">
+            <state line="167" column="14" selection-start="6814" selection-end="6814" vertical-scroll-proportion="0.0">
               <folding>
-                <element signature="e#0#7154#0" expanded="true" />
+                <element signature="e#0#7101#0" expanded="true" />
                 <element signature="imports" expanded="true" />
                 <element signature="e#884#914#0" expanded="true" />
                 <element signature="e#1618#1791#0" expanded="true" />
@@ -242,26 +240,28 @@
       <file leaf-file-name="AbstractController.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/manager/src/main/java/cz/pecrom/controller/AbstractController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="144" column="0" selection-start="4372" selection-end="4372" vertical-scroll-proportion="0.0">
+            <state line="80" column="0" selection-start="1781" selection-end="1781" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AbstractModel.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/manager/src/main/java/cz/pecrom/model/AbstractModel.java">
+      <file leaf-file-name="InternalController.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/manager/src/main/java/cz/pecrom/controller/InternalController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="11" selection-start="182" selection-end="182" vertical-scroll-proportion="0.0">
+            <state line="49" column="3" selection-start="1059" selection-end="1059" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DesktopController.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/manager/src/main/java/cz/pecrom/controller/main/DesktopController.java">
+      <file leaf-file-name="AbstractView.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/manager/src/main/java/cz/pecrom/view/AbstractView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="0" selection-start="668" selection-end="668" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="31" column="54" selection-start="767" selection-end="767" vertical-scroll-proportion="0.7842262">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -284,22 +284,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/manager/src/main/resources/cz/pecrom/xsd/menu.xsd" />
-        <option value="$PROJECT_DIR$/manager/src/main/resources/cz/pecrom/controller/main/AboutController.xml" />
         <option value="$PROJECT_DIR$/manager/src/main/resources/cz/pecrom/controller/main/DesktopController.xml" />
         <option value="$PROJECT_DIR$/manager/src/main/java/cz/pecrom/controller/main/AboutController.java" />
         <option value="$PROJECT_DIR$/manager/src/main/java/cz/pecrom/network/providers/PcapProvider.java" />
         <option value="$PROJECT_DIR$/manager/src/main/java/cz/pecrom/apps/sniffer/view/InterfaceComboModel.java" />
-        <option value="$PROJECT_DIR$/manager/src/main/java/cz/pecrom/controller/InternalController.java" />
         <option value="$PROJECT_DIR$/manager/src/main/java/cz/pecrom/controller/main/DesktopController.java" />
         <option value="$PROJECT_DIR$/manager/src/main/java/cz/pecrom/view/main/About_Form.java" />
         <option value="$PROJECT_DIR$/manager/src/main/java/cz/pecrom/ui/ViewChangeListener.java" />
-        <option value="$PROJECT_DIR$/manager/src/main/java/cz/pecrom/controller/AbstractController.java" />
-        <option value="$PROJECT_DIR$/manager/src/main/java/cz/pecrom/model/apps/sniffer/SnifferModel.java" />
         <option value="$PROJECT_DIR$/manager/pom.xml" />
         <option value="$PROJECT_DIR$/manager/src/main/java/cz/pecrom/apps/sniffer/view/InterfaceComboRenderer.java" />
-        <option value="$PROJECT_DIR$/manager/src/main/java/cz/pecrom/controller/apps/sniffer/SnifferController.java" />
         <option value="$PROJECT_DIR$/manager/src/main/java/cz/pecrom/view/apps/sniffer/Sniffer_Form.java" />
+        <option value="$PROJECT_DIR$/manager/src/main/java/cz/pecrom/network/NetworkUtils.java" />
+        <option value="$PROJECT_DIR$/manager/src/main/java/cz/pecrom/controller/apps/sniffer/SnifferController.java" />
+        <option value="$PROJECT_DIR$/manager/src/main/java/cz/pecrom/model/apps/sniffer/SnifferModel.java" />
+        <option value="$PROJECT_DIR$/manager/src/main/java/cz/pecrom/controller/AbstractController.java" />
+        <option value="$PROJECT_DIR$/manager/src/main/java/cz/pecrom/controller/InternalController.java" />
+        <option value="$PROJECT_DIR$/manager/src/main/java/cz/pecrom/view/AbstractView.java" />
       </list>
     </option>
   </component>
@@ -563,52 +563,6 @@
               <option name="myItemId" value="view" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="networkmanager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="manager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cz" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pecrom" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="apps" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sniffer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -673,14 +627,6 @@
               <option name="myItemId" value="pecrom" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="menu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -712,41 +658,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="network" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="providers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="networkmanager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="manager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cz" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pecrom" />
+              <option name="myItemId" value="controller" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1042,7 +954,11 @@
       <created>1386670426372</created>
       <updated>1386670426372</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="propertyChangeListeners support">
+      <created>1386680144774</created>
+      <updated>1386680144774</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1060,10 +976,10 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32823366" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24967825" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14478764" sideWeight="0.5201669" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14478764" sideWeight="0.6703755" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32303733" sideWeight="0.5201669" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4798331" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32303733" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962447" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962447" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1113,7 +1029,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="model implementation + sniffer" />
+    <option name="LAST_COMMIT_MESSAGE" value="propertyChangeListeners support" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1131,6 +1047,7 @@
     <MESSAGE value="functional main desktop + controllers" />
     <MESSAGE value="sniffer implementation" />
     <MESSAGE value="model implementation + sniffer" />
+    <MESSAGE value="propertyChangeListeners support" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1140,20 +1057,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/jnetpcap/jnetpcap.jar!/org/jnetpcap/PcapIf.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="13" selection-start="273" selection-end="273" vertical-scroll-proportion="0.2562814">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/manager/src/main/resources/cz/pecrom/controller/main/DesktopController.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="19" selection-start="798" selection-end="798" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/manager/src/main/java/Launcher.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="12" column="0" selection-start="323" selection-end="323" vertical-scroll-proportion="0.0">
@@ -1186,23 +1089,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/manager/src/main/java/cz/pecrom/controller/InternalController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="55" selection-start="1250" selection-end="1250" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/manager/src/main/java/cz/pecrom/model/AbstractModel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="11" selection-start="182" selection-end="182" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/manager/src/main/java/cz/pecrom/controller/AbstractController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="144" column="0" selection-start="4372" selection-end="4372" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -1211,24 +1100,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="26" column="0" selection-start="668" selection-end="668" vertical-scroll-proportion="0.0">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/manager/src/main/java/cz/pecrom/model/apps/sniffer/SnifferModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="0" selection-start="545" selection-end="545" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/manager/src/main/java/cz/pecrom/network/providers/PcapProvider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="16" selection-start="389" selection-end="389" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1246,24 +1117,72 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/manager/src/main/java/cz/pecrom/controller/apps/sniffer/SnifferController.java">
+    <entry file="file://$PROJECT_DIR$/manager/src/main/java/cz/pecrom/view/apps/sniffer/Sniffer_Form.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="96" column="63" selection-start="2608" selection-end="2608" vertical-scroll-proportion="0.0">
+        <state line="167" column="14" selection-start="6814" selection-end="6814" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#0#7101#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#884#914#0" expanded="true" />
+            <element signature="e#1618#1791#0" expanded="true" />
+            <element signature="e#1780#1781#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manager/src/main/java/cz/pecrom/network/providers/PcapProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="4" selection-start="532" selection-end="532" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/manager/src/main/java/cz/pecrom/view/apps/sniffer/Sniffer_Form.java">
+    <entry file="file://$PROJECT_DIR$/manager/src/main/java/cz/pecrom/network/NetworkUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="168" column="14" selection-start="6867" selection-end="6867" vertical-scroll-proportion="0.69044006">
+        <state line="17" column="5" selection-start="434" selection-end="434" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manager/src/main/java/cz/pecrom/model/apps/sniffer/SnifferModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="29" selection-start="612" selection-end="612" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="e#0#7154#0" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="e#884#914#0" expanded="true" />
-            <element signature="e#1618#1791#0" expanded="true" />
-            <element signature="e#1780#1781#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manager/src/main/java/cz/pecrom/controller/apps/sniffer/SnifferController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="82" column="97" selection-start="2255" selection-end="2255" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manager/src/main/java/cz/pecrom/controller/AbstractController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="80" column="0" selection-start="1781" selection-end="1781" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manager/src/main/java/cz/pecrom/controller/InternalController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="49" column="3" selection-start="1059" selection-end="1059" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manager/src/main/java/cz/pecrom/view/AbstractView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="54" selection-start="767" selection-end="767" vertical-scroll-proportion="0.7842262">
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
