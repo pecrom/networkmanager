@@ -1,6 +1,7 @@
 package cz.pecrom.controller;
 
 import cz.pecrom.controller.main.*;
+import cz.pecrom.model.*;
 
 import java.io.*;
 
@@ -13,8 +14,8 @@ import java.io.*;
 public class InternalController extends AbstractController {
   protected DesktopController desktop;
 
-  public InternalController(String viewClazz, DesktopController mainController) throws ClassNotFoundException {
-    super(viewClazz, mainController);
+  public InternalController(String viewClazz, AbstractModel model,DesktopController mainController) throws ClassNotFoundException {
+    super(viewClazz, model, mainController);
   }
 
 
@@ -24,6 +25,11 @@ public class InternalController extends AbstractController {
 
   public void setDesktop(DesktopController desktop) {
     this.desktop = desktop;
+  }
+
+  @Override
+  protected void initModel() {
+
   }
 
   @Override

@@ -17,7 +17,7 @@ import java.io.*;
 public class DesktopController extends AbstractController {
   protected JFrame mainFrame = null;
   public DesktopController(String clazz) throws ClassNotFoundException {
-    super(clazz, null);
+    super(clazz, null, null);
     setMainController(this);
   }
 
@@ -28,6 +28,11 @@ public class DesktopController extends AbstractController {
 
   protected JFrame getMainFrame() {
     return mainFrame;
+  }
+
+  @Override
+  protected void initModel() {
+
   }
 
   protected void createMenu(InputStream resource) {

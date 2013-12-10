@@ -13,6 +13,7 @@
             <xs:element type="xs:string" name="label" minOccurs="1" maxOccurs="1"/>
             <xs:element type="xs:string" name="controller" minOccurs="1" maxOccurs="1"/>
             <xs:element type="xs:string" name="view" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:string" name="model" minOccurs="1" maxOccurs="1"/>
         </xs:sequence>
     </xs:complexType>
 

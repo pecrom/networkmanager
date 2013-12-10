@@ -1,6 +1,7 @@
 package cz.pecrom.controller;
 
 import cz.pecrom.controller.main.*;
+import cz.pecrom.model.*;
 import cz.pecrom.ui.menu.*;
 
 import javax.swing.*;
@@ -23,13 +24,24 @@ public abstract class AbstractController extends SwingWorker<Void, Void> {
   protected JMenuBar menuBar = null;
   protected static Logger logger = null;
   protected DesktopController mainController = null;
+  protected AbstractModel model;
 
-  public AbstractController(String viewClazz, DesktopController mainController) throws ClassNotFoundException {
+  public AbstractController(String viewClazz, AbstractModel model, DesktopController mainController) throws ClassNotFoundException {
     setViewClazz(Class.forName(viewClazz));
     setMainController(mainController);
+    setModel(model);
     this.execute();
   }
 
+  protected abstract void initModel();
+
+  public AbstractModel getModel() {
+    return model;
+  }
+
+  public void setModel(AbstractModel model) {
+    this.model = model;
+  }
 
   public DesktopController getMainController() {
     return mainController;
@@ -96,8 +108,11 @@ public abstract class AbstractController extends SwingWorker<Void, Void> {
           @Override
           public void actionPerformed(ActionEvent e) {
             try {
+              Class clazzModel = Class.forName(app.getModel());
+              AbstractModel model = (AbstractModel)  clazzModel.newInstance();
+              setModel(model);
               Class clazzController = Class.forName(app.getController());
-              InternalController controller = (InternalController) clazzController.getDeclaredConstructor(String.class, DesktopController.class).newInstance(app.getView(), getMainController());
+              InternalController controller = (InternalController) clazzController.getDeclaredConstructor(String.class, AbstractModel.class, DesktopController.class).newInstance(app.getView(),getModel(), getMainController());
               controller.execute();
             } catch (ClassNotFoundException e1) {
               getLogger().info("Cannot instatiate new internal frame");
@@ -127,6 +142,7 @@ public abstract class AbstractController extends SwingWorker<Void, Void> {
     view = (JComponent) getViewClazz().newInstance();
     view.setVisible(true);
     view.requestFocus();
+    initModel();
     return null;
   }
 }
