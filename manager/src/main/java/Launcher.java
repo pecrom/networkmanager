@@ -1,4 +1,5 @@
 import cz.pecrom.controller.main.*;
+import cz.pecrom.view.main.*;
 
 import javax.swing.*;
 
@@ -11,7 +12,8 @@ import javax.swing.*;
 public class Launcher {
   public static void main(String[] args) throws ClassNotFoundException, UnsupportedLookAndFeelException, InstantiationException, IllegalAccessException {
     UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
-    DesktopController controller = new DesktopController("cz.pecrom.view.main.Desktop_Form");
-    controller.execute();
+    DesktopView view = new DesktopView();
+    DesktopController controller = new DesktopController(view,"cz.pecrom.view.main.form.Desktop_Form");
+//    controller.execute();
   }
 }

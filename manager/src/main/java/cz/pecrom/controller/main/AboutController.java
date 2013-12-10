@@ -2,6 +2,7 @@ package cz.pecrom.controller.main;
 
 import cz.pecrom.controller.*;
 import cz.pecrom.model.*;
+import cz.pecrom.view.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -11,8 +12,8 @@ import cz.pecrom.model.*;
  */
 public class AboutController extends InternalController {
 
-  public AboutController(String viewClazz, AbstractModel model, DesktopController mainController) throws ClassNotFoundException {
-    super(viewClazz, model, mainController);
+  public AboutController(AbstractView view, AbstractModel model, String formClazz, DesktopController mainController) throws ClassNotFoundException {
+    super(view, model, formClazz, mainController);
   }
 
   @Override

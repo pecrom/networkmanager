@@ -6,6 +6,7 @@ import cz.pecrom.model.*;
 import cz.pecrom.model.apps.sniffer.*;
 import cz.pecrom.network.*;
 import cz.pecrom.network.providers.*;
+import cz.pecrom.view.*;
 import org.jnetpcap.*;
 
 import java.beans.*;
@@ -20,8 +21,8 @@ import java.util.*;
 public class SnifferController extends InternalController {
 
 
-  public SnifferController(String viewClazz, AbstractModel model, DesktopController desktop) throws ClassNotFoundException {
-    super(viewClazz, model, desktop);
+  public SnifferController(AbstractView view, AbstractModel model, String formClazz, DesktopController desktop) throws ClassNotFoundException {
+    super(view, model, formClazz, desktop);
 
   }
 

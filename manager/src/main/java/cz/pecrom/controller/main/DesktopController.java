@@ -2,7 +2,8 @@ package cz.pecrom.controller.main;
 
 import cz.pecrom.controller.*;
 import cz.pecrom.ui.menu.*;
-import cz.pecrom.view.main.*;
+import cz.pecrom.view.*;
+import cz.pecrom.view.main.form.*;
 
 import javax.swing.*;
 import javax.xml.bind.*;
@@ -17,13 +18,35 @@ import java.io.*;
  */
 public class DesktopController extends AbstractController {
   protected JFrame mainFrame = null;
-  public DesktopController(String clazz) throws ClassNotFoundException {
-    super(clazz, null, null);
+  public DesktopController(AbstractView view, String formClazz) throws ClassNotFoundException {
+    super(view, null, formClazz, null);
     setMainController(this);
+    try {
+      createMainDesktop();
+    } catch (IOException | IllegalAccessException | InstantiationException e) {
+      getLogger().info("Can not instatiate main desktop");
+    }
+  }
+
+  private void createMainDesktop() throws IOException, IllegalAccessException, InstantiationException {
+    JComponent form = (JComponent) getFormClazz().newInstance();
+    getView().setContent(form);
+    getView().getContent().setVisible(true);
+    getView().getContent().requestFocus();
+    mainFrame = new JFrame();
+
+    mainFrame.add(getView().getContent());
+    try(InputStream is =getClass().getResourceAsStream(getClass().getSimpleName()+".xml")){
+      createMenu(is);
+    }
+    mainFrame.setVisible(true);
+    mainFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+    mainFrame.setSize(1280,760);
   }
 
   public void createInternalFrame(AbstractController controller){
-    ((Desktop_Form)getView()).addInternalFrame(controller.getView());
+    System.out.println();
+    ((Desktop_Form)getView().getContent()).addInternalFrame(controller.getView().getContent());
     getLogger().info("instatiating new internal frame");
   }
 
@@ -57,19 +80,6 @@ public class DesktopController extends AbstractController {
 
   @Override
   protected Void doInBackground() throws Exception {
-    view = (JComponent) getViewClazz().newInstance();
-    view.setVisible(true);
-    view.requestFocus();
-    mainFrame = new JFrame();
-
-    mainFrame.add(view);
-    System.out.println(getClass().getSimpleName()+".xml");
-    try(InputStream is =getClass().getResourceAsStream(getClass().getSimpleName()+".xml")){
-      createMenu(is);
-    }
-    mainFrame.setVisible(true);
-    mainFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-    mainFrame.setSize(1280,760);
     return null;
   }
 

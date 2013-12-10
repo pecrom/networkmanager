@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package cz.pecrom.view.apps.sniffer;
+package cz.pecrom.view.apps.sniffer.form;
 
 import cz.pecrom.apps.sniffer.view.*;
 import cz.pecrom.model.apps.sniffer.*;
@@ -25,7 +25,7 @@ public class Sniffer_Form extends javax.swing.JPanel implements PropertyChangeLi
   public Sniffer_Form() {
     pcs = new PropertyChangeSupport(this);
     initComponents();
-
+    adapters.removeAllItems();
     adapters.setRenderer(new InterfaceComboRenderer());
   }
 
@@ -47,7 +47,6 @@ public class Sniffer_Form extends javax.swing.JPanel implements PropertyChangeLi
         jLabel4 = new javax.swing.JLabel();
         netmask = new javax.swing.JLabel();
 
-        adapters.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         adapters.setName("adapters"); // NOI18N
         adapters.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

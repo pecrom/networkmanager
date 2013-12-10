@@ -2,6 +2,7 @@ package cz.pecrom.view;
 
 import javax.swing.*;
 import java.awt.*;
+import java.beans.*;
 import java.util.List;
 
 /**
@@ -10,7 +11,7 @@ import java.util.List;
  * Date: 10.12.13
  * Time: 15:22
  */
-public class AbstractView {
+public class AbstractView implements PropertyChangeListener {
   protected JComponent content = null;
 
   public JComponent getContent() {
@@ -30,5 +31,10 @@ public class AbstractView {
       buttonPanel.add(actionButton);
     }
     getContent().add(buttonPanel, BorderLayout.SOUTH);
+  }
+
+  @Override
+  public void propertyChange(PropertyChangeEvent evt) {
+
   }
 }

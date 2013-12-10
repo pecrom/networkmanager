@@ -6,7 +6,8 @@
         <application>
             <label>Sniffer</label>
             <controller>cz.pecrom.controller.apps.sniffer.SnifferController</controller>
-            <view>cz.pecrom.view.apps.sniffer.Sniffer_Form</view>
+            <view>cz.pecrom.view.apps.sniffer.SnifferView</view>
+            <form>cz.pecrom.view.apps.sniffer.form.Sniffer_Form</form>
             <model>cz.pecrom.model.apps.sniffer.SnifferModel</model>
         </application>               
     </menuItem>  
@@ -15,7 +16,8 @@
         <application>
             <label>About</label>
             <controller>cz.pecrom.controller.main.AboutController</controller>
-            <view>cz.pecrom.view.main.About_Form</view>
+            <view>cz.pecrom.view.main.form.About_Form</view>
+            <form></form>
             <model></model>
         </application>
     </menuItem>

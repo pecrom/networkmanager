@@ -2,6 +2,7 @@ package cz.pecrom.controller;
 
 import cz.pecrom.controller.main.*;
 import cz.pecrom.model.*;
+import cz.pecrom.view.*;
 
 import javax.swing.*;
 import java.beans.*;
@@ -18,8 +19,8 @@ public class InternalController extends AbstractController {
   protected DesktopController desktop;
   protected List<AbstractAction> actions = null;
 
-  public InternalController(String viewClazz, AbstractModel model,DesktopController mainController) throws ClassNotFoundException {
-    super(viewClazz, model, mainController);
+  public InternalController(AbstractView view, AbstractModel model,String formClazz, DesktopController mainController) throws ClassNotFoundException {
+    super(view, model, formClazz, mainController);
     actions = new ArrayList<>();
   }
 

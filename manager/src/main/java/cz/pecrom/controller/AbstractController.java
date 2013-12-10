@@ -2,8 +2,8 @@ package cz.pecrom.controller;
 
 import cz.pecrom.controller.main.*;
 import cz.pecrom.model.*;
-import cz.pecrom.ui.*;
 import cz.pecrom.ui.menu.*;
+import cz.pecrom.view.*;
 
 import javax.swing.*;
 import javax.xml.bind.*;
@@ -21,23 +21,25 @@ import java.util.logging.*;
  * Time: 14:48
  */
 public abstract class AbstractController extends SwingWorker<Void, Void> implements PropertyChangeListener {
-  protected Class viewClazz;
-  protected JComponent view;
+  protected Class formClazz;
+  protected AbstractView view;
   protected JMenuBar menuBar = null;
   protected static Logger logger = null;
   protected DesktopController mainController = null;
   protected AbstractModel model;
 
 
-  public AbstractController(String viewClazz, AbstractModel model, DesktopController mainController) throws ClassNotFoundException {
-    setViewClazz(Class.forName(viewClazz));
+  public AbstractController(AbstractView view, AbstractModel model, String formClazz, DesktopController mainController) throws ClassNotFoundException {
+    setFormClazz(Class.forName(formClazz));
     setMainController(mainController);
     setModel(model);
-
+    setView(view);
     this.execute();
   }
 
   protected abstract void initModel();
+
+
 
   public AbstractModel getModel() {
     return model;
@@ -56,19 +58,19 @@ public abstract class AbstractController extends SwingWorker<Void, Void> impleme
     this.mainController = mainController;
   }
 
-  public Class getViewClazz() {
-    return viewClazz;
+  public Class getFormClazz() {
+    return formClazz;
   }
 
-  public void setViewClazz(Class viewClazz) {
-    this.viewClazz = viewClazz;
+  public void setFormClazz(Class formClazz) {
+    this.formClazz = formClazz;
   }
 
-  public JComponent getView() {
+  public AbstractView getView() {
     return view;
   }
 
-  public void setView(JComponent view) {
+  public void setView(AbstractView view) {
     this.view = view;
   }
 
@@ -92,10 +94,10 @@ public abstract class AbstractController extends SwingWorker<Void, Void> impleme
         createMenuItems(mainMenuItem, item.getChildren());
         createAppMenuItems(mainMenuItem, item.getApplication());
       }
-      SwingUtilities.getRootPane(getView()).setJMenuBar(menuBar);
+      SwingUtilities.getRootPane(getView().getContent()).setJMenuBar(menuBar);
 
     } catch (JAXBException e) {
-      getLogger().info("Cannot parse class");
+      getLogger().info("Can not parse class");
     }
   }
 
@@ -116,14 +118,19 @@ public abstract class AbstractController extends SwingWorker<Void, Void> impleme
             try {
               Class clazzModel = Class.forName(app.getModel());
               AbstractModel model = (AbstractModel)  clazzModel.newInstance();
-              setModel(model);
+
+              Class clazzView = Class.forName(app.getView());
+              AbstractView view = (AbstractView) clazzView.newInstance();
+
               Class clazzController = Class.forName(app.getController());
-              InternalController controller = (InternalController) clazzController.getDeclaredConstructor(String.class, AbstractModel.class, DesktopController.class).newInstance(app.getView(),getModel(), getMainController());
+              getLogger().info("instatiating new internal frame");
+              InternalController controller = (InternalController) clazzController.getDeclaredConstructor(AbstractView.class, AbstractModel.class, String.class, DesktopController.class).newInstance(view,model,app.getForm(), getMainController());
               controller.execute();
+
             } catch (ClassNotFoundException e1) {
               getLogger().info("Cannot instatiate new internal frame");
             } catch (InstantiationException | IllegalAccessException | NoSuchMethodException | InvocationTargetException e1) {
-              getLogger().info("Cannot instatiate new controller");
+              getLogger().info("Can not instatiate new controller");
             }
           }
         });
@@ -145,16 +152,12 @@ public abstract class AbstractController extends SwingWorker<Void, Void> impleme
 
   @Override
   protected Void doInBackground() throws Exception {
-    view = (JComponent) getViewClazz().getDeclaredConstructor().newInstance();
-    getLogger().info("creating view");
-    view.setVisible(true);
-
-    view.requestFocus();
-
-    ((ViewChangeListener)view).addViewChangeListener(this);
-
+    JComponent form = (JComponent) getFormClazz().getDeclaredConstructor().newInstance();
+    getView().setContent(form);
+    getView().getContent().setVisible(true);
+    getView().getContent().requestFocus();
+//    ((ViewChangeListener)view).addViewChangeListener(this);
     initModel();
-
     return null;
   }
 }

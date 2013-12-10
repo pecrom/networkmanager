@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package cz.pecrom.view.main;
+package cz.pecrom.view.main.form;
 
 import javax.swing.*;
 
