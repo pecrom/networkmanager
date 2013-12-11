@@ -156,7 +156,7 @@ public abstract class AbstractController extends SwingWorker<Void, Void> impleme
     getView().setContent(form);
     getView().getContent().setVisible(true);
     getView().getContent().requestFocus();
-//    ((ViewChangeListener)view).addViewChangeListener(this);
+    view.addPropertyChangeListener(this);
     initModel();
     return null;
   }

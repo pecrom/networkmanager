@@ -4,29 +4,23 @@
  */
 package cz.pecrom.view.apps.sniffer.form;
 
-import cz.pecrom.apps.sniffer.view.*;
-import cz.pecrom.model.apps.sniffer.*;
-import cz.pecrom.ui.*;
 import org.jnetpcap.*;
 
-import java.beans.*;
+import javax.swing.*;
 import java.util.*;
 
 /**
  * @author pecrom
  */
-public class Sniffer_Form extends javax.swing.JPanel implements PropertyChangeListener, ViewChangeListener {
-  private PropertyChangeSupport pcs;
+public class Sniffer_Form extends javax.swing.JPanel {
+
 
 
   /**
    * Creates new form Sniffer_Form
    */
   public Sniffer_Form() {
-    pcs = new PropertyChangeSupport(this);
     initComponents();
-    adapters.removeAllItems();
-    adapters.setRenderer(new InterfaceComboRenderer());
   }
 
   /**
@@ -48,11 +42,6 @@ public class Sniffer_Form extends javax.swing.JPanel implements PropertyChangeLi
         netmask = new javax.swing.JLabel();
 
         adapters.setName("adapters"); // NOI18N
-        adapters.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                adapterSelected(evt);
-            }
-        });
 
         jLabel1.setText("Adapter");
         jLabel1.setName("jLabel1"); // NOI18N
@@ -125,9 +114,6 @@ public class Sniffer_Form extends javax.swing.JPanel implements PropertyChangeLi
         );
     }// </editor-fold>//GEN-END:initComponents
 
-  private void adapterSelected(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adapterSelected
-    pcs.firePropertyChange(SnifferModel.SELECTED_ADAPTER, null, adapters.getSelectedItem());
-  }//GEN-LAST:event_adapterSelected
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox adapters;
@@ -140,43 +126,30 @@ public class Sniffer_Form extends javax.swing.JPanel implements PropertyChangeLi
     private javax.swing.JTable packets;
     // End of variables declaration//GEN-END:variables
 
-  private void setAddress(String addressData) {
+  public void setAddress(String addressData) {
     address.setText(addressData);
   }
 
-  private void setAdapters(Set<PcapIf> adaptersData) {
+  public void setAdapters(Set<PcapIf> adaptersData) {
     adapters.removeAllItems();
     for (PcapIf adapter : adaptersData)
       adapters.addItem(adapter);
   }
 
-  private void setNetmask(String netmaskData) {
+  public void setNetmask(String netmaskData) {
     netmask.setText(netmaskData);
   }
 
-  public void propertyChange(PropertyChangeEvent evt) {
-    switch (evt.getPropertyName()) {
-      case SnifferModel.ADDRESS:
-        setAddress((String) evt.getNewValue());
-        break;
-      case SnifferModel.ADAPTERS:
-        setAdapters((Set<PcapIf>) evt.getNewValue());
-        break;
-      case SnifferModel.NETMASK:
-        setNetmask((String) evt.getNewValue());
-        break;
-    }
+  public void removeAllItemsAdapters(){
+    adapters.removeAllItems();
   }
 
-
-
-  @Override
-  public void addViewChangeListener(PropertyChangeListener listener) {
-    pcs.addPropertyChangeListener(listener);
+  public void addItemAdapters(PcapIf item){
+    adapters.addItem(item);
   }
 
-  @Override
-  public void removeViewChangeListener(PropertyChangeListener listener) {
-    pcs.removePropertyChangeListener(listener);
+  public void setAdaptersRenderer(ListCellRenderer renderer){
+    adapters.setRenderer(renderer);
   }
+
 }

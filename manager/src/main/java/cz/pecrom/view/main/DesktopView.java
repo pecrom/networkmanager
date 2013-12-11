@@ -9,4 +9,8 @@ import cz.pecrom.view.*;
  * Time: 23:37
  */
 public class DesktopView extends AbstractView {
+  @Override
+  protected void initContent() {
+
+  }
 }

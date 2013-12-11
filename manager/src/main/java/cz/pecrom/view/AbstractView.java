@@ -11,7 +11,8 @@ import java.util.List;
  * Date: 10.12.13
  * Time: 15:22
  */
-public class AbstractView implements PropertyChangeListener {
+public abstract class AbstractView implements PropertyChangeListener {
+  final protected PropertyChangeSupport pcs = new PropertyChangeSupport(this);
   protected JComponent content = null;
 
   public JComponent getContent() {
@@ -20,6 +21,7 @@ public class AbstractView implements PropertyChangeListener {
 
   public void setContent(JComponent content) {
     this.content = content;
+    initContent();
   }
 
   public void setActions(List<AbstractAction> actions){
@@ -33,8 +35,18 @@ public class AbstractView implements PropertyChangeListener {
     getContent().add(buttonPanel, BorderLayout.SOUTH);
   }
 
+  public void addPropertyChangeListener(PropertyChangeListener listener){
+    pcs.addPropertyChangeListener(listener);
+  }
+
+  public void removePropertyChangeListener(PropertyChangeListener listener){
+    pcs.removePropertyChangeListener(listener);
+  }
+
   @Override
   public void propertyChange(PropertyChangeEvent evt) {
 
   }
+
+  abstract protected void initContent();
 }
