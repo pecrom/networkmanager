@@ -7,6 +7,7 @@ package cz.pecrom.view.apps.sniffer.form;
 import org.jnetpcap.*;
 
 import javax.swing.*;
+import java.awt.event.*;
 import java.util.*;
 
 /**
@@ -152,4 +153,7 @@ public class Sniffer_Form extends javax.swing.JPanel {
     adapters.setRenderer(renderer);
   }
 
+  public void addItemSelectionListener(ItemListener listener){
+    adapters.addItemListener(listener);
+  }
 }

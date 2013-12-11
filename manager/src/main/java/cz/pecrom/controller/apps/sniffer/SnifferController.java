@@ -91,13 +91,17 @@ public class SnifferController extends InternalController {
 
   }
 
+  public void changeSelectedAdapter(PcapIf newAdapter){
+    ((SnifferModel)getModel()).setSelectedAdapter(newAdapter);
+    ((SnifferModel)getModel()).setAddress(NetworkUtils.parseIPv4(getDevicesIPv4Address(newAdapter)));
+    ((SnifferModel)getModel()).setNetmask(NetworkUtils.parseIPv4(getDevicesNetmask(newAdapter)));
+  }
+
   @Override
   public void propertyChange(PropertyChangeEvent evt) {
     switch(evt.getPropertyName()){
       case SnifferModel.SELECTED_ADAPTER:
-        ((SnifferModel)getModel()).setSelectedAdapter((PcapIf)evt.getNewValue());
-        ((SnifferModel)getModel()).setAddress(NetworkUtils.parseIPv4(getDevicesIPv4Address((PcapIf)evt.getNewValue())));
-        ((SnifferModel)getModel()).setNetmask(NetworkUtils.parseIPv4(getDevicesNetmask((PcapIf) evt.getNewValue())));
+
         break;
     }
   }

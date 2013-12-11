@@ -125,6 +125,7 @@ public abstract class AbstractController extends SwingWorker<Void, Void> impleme
               Class clazzController = Class.forName(app.getController());
               getLogger().info("instatiating new internal frame");
               InternalController controller = (InternalController) clazzController.getDeclaredConstructor(AbstractView.class, AbstractModel.class, String.class, DesktopController.class).newInstance(view,model,app.getForm(), getMainController());
+              view.setController(controller);
               controller.execute();
 
             } catch (ClassNotFoundException e1) {

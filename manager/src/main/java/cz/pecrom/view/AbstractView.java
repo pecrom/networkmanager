@@ -1,5 +1,7 @@
 package cz.pecrom.view;
 
+import cz.pecrom.controller.*;
+
 import javax.swing.*;
 import java.awt.*;
 import java.beans.*;
@@ -11,9 +13,10 @@ import java.util.List;
  * Date: 10.12.13
  * Time: 15:22
  */
-public abstract class AbstractView implements PropertyChangeListener {
+public abstract class AbstractView<T extends AbstractController> implements PropertyChangeListener {
   final protected PropertyChangeSupport pcs = new PropertyChangeSupport(this);
   protected JComponent content = null;
+  protected T controller;
 
   public JComponent getContent() {
     return content;
@@ -22,6 +25,14 @@ public abstract class AbstractView implements PropertyChangeListener {
   public void setContent(JComponent content) {
     this.content = content;
     initContent();
+  }
+
+  public T getController() {
+    return controller;
+  }
+
+  public void setController(T controller) {
+    this.controller = controller;
   }
 
   public void setActions(List<AbstractAction> actions){
