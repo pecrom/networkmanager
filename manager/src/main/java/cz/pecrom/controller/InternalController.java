@@ -4,10 +4,8 @@ import cz.pecrom.controller.main.*;
 import cz.pecrom.model.*;
 import cz.pecrom.view.*;
 
-import javax.swing.*;
 import java.beans.*;
 import java.io.*;
-import java.util.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -17,11 +15,9 @@ import java.util.*;
  */
 public class InternalController extends AbstractController {
   protected DesktopController desktop;
-  protected List<AbstractAction> actions = null;
 
   public InternalController(AbstractView view, AbstractModel model,String formClazz, DesktopController mainController) throws ClassNotFoundException {
     super(view, model, formClazz, mainController);
-    actions = new ArrayList<>();
   }
 
 
@@ -36,18 +32,6 @@ public class InternalController extends AbstractController {
   @Override
   protected void initModel() {
 
-  }
-
-  public void addAction(AbstractAction action){
-    actions.add(action);
-  }
-
-  public void removeAction(AbstractAction action){
-    actions.remove(action);
-  }
-
-  public List<AbstractAction> getActions(){
-    return actions;
   }
 
   @Override

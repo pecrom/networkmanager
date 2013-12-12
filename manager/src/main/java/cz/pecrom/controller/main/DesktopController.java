@@ -45,8 +45,9 @@ public class DesktopController extends AbstractController {
   }
 
   public void createInternalFrame(AbstractController controller){
-    System.out.println();
-    ((Desktop_Form)getView().getContent()).addInternalFrame(controller.getView().getContent());
+    JInternalFrame frame = ((Desktop_Form)getView().getContent()).addInternalFrame(controller.getView().getContent());
+    controller.getView().setFrame(frame);
+    controller.getView().createActionPanel(controller.getView().getActions());
     getLogger().info("instatiating new internal frame");
   }
 

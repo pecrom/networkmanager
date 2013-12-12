@@ -64,9 +64,6 @@
         </Property>
         <Property name="name" type="java.lang.String" value="adapters" noResource="true"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="adapterSelected"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
@@ -87,7 +84,7 @@
         <Component class="javax.swing.JTable" name="packets">
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-              <Table columnCount="4" rowCount="4">
+              <Table columnCount="4" rowCount="0">
                 <Column editable="true" title="Title 1" type="java.lang.Object"/>
                 <Column editable="true" title="Title 2" type="java.lang.Object"/>
                 <Column editable="true" title="Title 3" type="java.lang.Object"/>

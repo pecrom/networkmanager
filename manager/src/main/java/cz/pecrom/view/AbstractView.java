@@ -5,7 +5,7 @@ import cz.pecrom.controller.*;
 import javax.swing.*;
 import java.awt.*;
 import java.beans.*;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -16,7 +16,14 @@ import java.util.List;
 public abstract class AbstractView<T extends AbstractController> implements PropertyChangeListener {
   final protected PropertyChangeSupport pcs = new PropertyChangeSupport(this);
   protected JComponent content = null;
+  protected JInternalFrame frame = null;
   protected T controller;
+  protected Map<String, AbstractAction> actions;
+
+  protected AbstractView() {
+    actions = new HashMap<>();
+    initActions();
+  }
 
   public JComponent getContent() {
     return content;
@@ -35,22 +42,48 @@ public abstract class AbstractView<T extends AbstractController> implements Prop
     this.controller = controller;
   }
 
-  public void setActions(List<AbstractAction> actions){
-    JPanel buttonPanel = new JPanel();
-    buttonPanel.setLayout(new FlowLayout(FlowLayout.RIGHT));
-    for(AbstractAction action : actions){
-      JButton actionButton = new JButton("test");
-      actionButton.setAction(action);
-      buttonPanel.add(actionButton);
-    }
-    getContent().add(buttonPanel, BorderLayout.SOUTH);
+  protected void addAction(String label, AbstractAction action) {
+    actions.put(label, action);
   }
 
-  public void addPropertyChangeListener(PropertyChangeListener listener){
+  protected void addAction(Map.Entry<String, AbstractAction> entry) {
+    actions.entrySet().add(entry);
+  }
+
+  public Map<String, AbstractAction> getActions() {
+    return actions;
+  }
+
+  public void setActions(Map<String, AbstractAction> actions) {
+    this.actions = actions;
+  }
+
+  public void createActionPanel(Map<String, AbstractAction> actions) {
+    JPanel buttonPanel = new JPanel();
+    buttonPanel.setLayout(new FlowLayout(FlowLayout.RIGHT));
+    for (Map.Entry<String, AbstractAction> entry : actions.entrySet()) {
+      JButton actionButton = new JButton();
+      actionButton.setAction(entry.getValue());
+      actionButton.setText(entry.getKey());
+      buttonPanel.add(actionButton);
+    }
+
+    getFrame().getContentPane().add(buttonPanel, BorderLayout.SOUTH);
+  }
+
+  public JInternalFrame getFrame() {
+    return frame;
+  }
+
+  public void setFrame(JInternalFrame frame) {
+    this.frame = frame;
+  }
+
+  public void addPropertyChangeListener(PropertyChangeListener listener) {
     pcs.addPropertyChangeListener(listener);
   }
 
-  public void removePropertyChangeListener(PropertyChangeListener listener){
+  public void removePropertyChangeListener(PropertyChangeListener listener) {
     pcs.removePropertyChangeListener(listener);
   }
 
@@ -60,4 +93,6 @@ public abstract class AbstractView<T extends AbstractController> implements Prop
   }
 
   abstract protected void initContent();
+
+  abstract protected void initActions();
 }

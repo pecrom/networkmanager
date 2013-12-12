@@ -15,7 +15,6 @@ import java.awt.*;
 public class InterfaceComboRenderer extends BasicComboBoxRenderer {
   @Override
   public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
-    //@ToDo fix it, sometimes value==null
     String pcapValue = (value instanceof String || value == null) ? (String) value : ((PcapIf) value).getDescription();
     return super.getListCellRendererComponent(list, pcapValue, index, isSelected, cellHasFocus);
   }

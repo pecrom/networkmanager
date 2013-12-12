@@ -5,8 +5,10 @@
 package cz.pecrom.view.apps.sniffer.form;
 
 import org.jnetpcap.*;
+import org.jnetpcap.packet.*;
 
 import javax.swing.*;
+import javax.swing.table.*;
 import java.awt.event.*;
 import java.util.*;
 
@@ -51,10 +53,7 @@ public class Sniffer_Form extends javax.swing.JPanel {
 
         packets.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
                 "Title 1", "Title 2", "Title 3", "Title 4"
@@ -155,5 +154,13 @@ public class Sniffer_Form extends javax.swing.JPanel {
 
   public void addItemSelectionListener(ItemListener listener){
     adapters.addItemListener(listener);
+  }
+
+  public void setPacketModel(TableModel model){
+    packets.setModel(model);
+  }
+
+  public void addPacket(PcapPacket packet){
+//    packets.getModel().
   }
 }

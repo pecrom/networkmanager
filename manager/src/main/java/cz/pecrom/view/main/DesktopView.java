@@ -13,4 +13,9 @@ public class DesktopView extends AbstractView {
   protected void initContent() {
 
   }
+
+  @Override
+  protected void initActions() {
+
+  }
 }

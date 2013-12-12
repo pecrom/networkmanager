@@ -19,6 +19,10 @@ public class SnifferModel extends AbstractModel {
   final public static String ADDRESS = "address";
   final public static String NETMASK = "netmask";
 
+  Queue<PcapPacket> packetQueue;{
+    packetQueue = new LinkedList<>();
+  }
+
   Set<org.jnetpcap.PcapIf> adapters;{
     adapters = new HashSet<>();
   }
@@ -28,7 +32,6 @@ public class SnifferModel extends AbstractModel {
   }
   String address;
   String netmask;
-
 
   public Set<PcapIf> getAdapters() {
     return adapters;
@@ -69,7 +72,8 @@ public class SnifferModel extends AbstractModel {
   public void addPacket(PcapPacket packet) {
     List<PcapPacket> oldPackets = new ArrayList<>(packets);
     packets.add(packet);
-    pcs.firePropertyChange(PACKETS, oldPackets, packets);
+    packetQueue.add(packet);
+    pcs.firePropertyChange(PACKETS, null, packetQueue);
   }
 
   public PcapIf getSelectedAdapter() {
